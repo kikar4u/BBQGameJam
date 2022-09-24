@@ -22,6 +22,8 @@ public class PlayerController : MonoBehaviour
     private static readonly int IsMoving = Animator.StringToHash("isMoving");
     private static readonly int IsRunning = Animator.StringToHash("isRunning");
 
+    [SerializeField] public bool isOnQuest = false;
+
     // Start is called before the first frame update
     private void Start()
     {
@@ -65,10 +67,16 @@ public class PlayerController : MonoBehaviour
     }
     private void questInteraction()
     {
-        if (Input.GetButton("Fire1"))
+        if (isOnQuest)
         {
-            Debug.Log("APPUYER POUR QUEST");
+            if (Input.GetButtonDown("Fire1"))
+            {
+                Debug.Log("APPUYER POUR QUEST");
+
+            }
+
         }
+
     }
 
 

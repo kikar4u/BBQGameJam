@@ -24,6 +24,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject winUI;
     private bool isWin;
     private bool gameOver;
+    [SerializeField] int cafeToHave = 1;
+    public int cafeAtm = 0;
 
     void Start()
     {
@@ -37,6 +39,17 @@ public class GameManager : MonoBehaviour
         gameOver = isGameOver;
         gameOverUI.SetActive(true);
         DoPause(isGameOver);
+    }
+    public void addCafe()
+    {
+        cafeAtm += 1;
+        Debug.Log("addcafe" + cafeAtm);
+        if(cafeAtm == cafeToHave)
+        {
+            Debug.Log("on est dans le if de addcafe");
+            cafeAtm = 0;
+            GetComponent<EnduranceJauge>().switchRoutine(true);
+        }
     }
 
     public void Win()
@@ -68,14 +81,14 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Submit") && (gameOver || isWin))
+/*        if (Input.GetButtonDown("Submit") && (gameOver || isWin))
         {
             SceneManager.LoadScene("Level1");
-        }
-        if (Input.GetButtonDown("Start"))
+        }*/
+/*        if (Input.GetButtonDown("Start"))
         {
             pauseMenu();
-        }
+        }*/
     }
     
     public void LoadMainMenu()

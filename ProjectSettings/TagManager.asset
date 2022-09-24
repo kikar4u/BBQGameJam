@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - enduranceSlider
+  - cafe
   layers:
   - Default
   - TransparentFX
