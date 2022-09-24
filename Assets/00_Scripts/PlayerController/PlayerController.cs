@@ -29,6 +29,7 @@ public class PlayerController : MonoBehaviour
     }
     private void Update()
     {
+        questInteraction();
         // ControleHiding();
         //LookForward();
     }
@@ -61,6 +62,13 @@ public class PlayerController : MonoBehaviour
 
         body.velocity = newVelocity;
         
+    }
+    private void questInteraction()
+    {
+        if (Input.GetButton("Fire1"))
+        {
+            Debug.Log("APPUYER POUR QUEST");
+        }
     }
 
 
