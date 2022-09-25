@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public List<GameObject> listSpawnCafe = new List<GameObject>();
     [SerializeField] Canvas pauseMenuUI;
     public bool canMove = true;
+    public int score = 0;
 
     public static GameManager instance
     {

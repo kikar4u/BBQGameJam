@@ -9,6 +9,7 @@ public class QuestTrigger : MonoBehaviour
     [SerializeField] GameManager gManager;
     public GameObject questCanvas;
     public bool spawn = true;
+    public GameObject UIScore;
     void Awake()
     {
         gManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
@@ -47,10 +48,12 @@ public class QuestTrigger : MonoBehaviour
         {
             gManager.randomSpawn(gManager.listSpawn);
         }
-
+        gManager.score++;
+        UIScore.GetComponent<addScore>().updateScore();
         questCanvas.SetActive(false);
         Destroy(gameObject);
         gManager.canMove = true;
+        
     }
     // Update is called once per frame
     void Update()
