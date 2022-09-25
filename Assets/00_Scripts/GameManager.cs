@@ -58,6 +58,7 @@ public class GameManager : MonoBehaviour
         gameOver = isGameOver;
         gameOverUI.SetActive(true);
         DoPause(isGameOver);
+        gameObject.GetComponent<ImageFade>().fade();
     }
     public void addCafe()
     {
