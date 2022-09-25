@@ -12,6 +12,7 @@ TagManager:
   - Quest
   - cafeSpawn
   - score
+  - UIScore
   layers:
   - Default
   - TransparentFX
