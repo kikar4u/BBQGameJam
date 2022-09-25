@@ -24,6 +24,12 @@ public class CameraControl : MonoBehaviour
             DOTween.To(() => fov, x => fov = x, dezoomDistance, 0.5f)
             .OnUpdate(() => {
                 GameCamera.m_Lens.OrthographicSize = fov;
+                
+                GameObject[] arrayQuest = GameObject.FindGameObjectsWithTag("Quest");
+                foreach (GameObject item in arrayQuest)
+                {
+                    item.GetComponentInChildren<Transform>().localScale = new Vector3(3, 3, 3);
+                }
                 GameObject[] arrayCafe = GameObject.FindGameObjectsWithTag("cafe");
                 foreach (GameObject item in arrayCafe)
                 {
@@ -41,6 +47,11 @@ public class CameraControl : MonoBehaviour
                 GameCamera.m_Lens.OrthographicSize = fov;
                 GameObject[] arrayCafe = GameObject.FindGameObjectsWithTag("cafe");
                 foreach (GameObject item in arrayCafe)
+                {
+                    item.GetComponentInChildren<Transform>().localScale = new Vector3(1, 1, 1);
+                }
+                GameObject[] arrayQuest = GameObject.FindGameObjectsWithTag("Quest");
+                foreach (GameObject item in arrayQuest)
                 {
                     item.GetComponentInChildren<Transform>().localScale = new Vector3(1, 1, 1);
                 }
