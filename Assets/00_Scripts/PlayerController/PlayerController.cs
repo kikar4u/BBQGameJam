@@ -56,21 +56,29 @@ public class PlayerController : MonoBehaviour
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
         float _multRun = Input.GetButton("Fire2") ? multRun : 1;
-        
-        Vector2 newVelocity = new Vector2(horizontal * speed * _multRun, vertical * speed * _multRun);
-        //Debug.Log(newVelocity);
-        if(newVelocity.x <= 0)
+
+        if (gManager.canMove)
         {
-            sprRend.flipX = false;
+            Vector2 newVelocity = new Vector2(horizontal * speed * _multRun, vertical * speed * _multRun);
+            //Debug.Log(newVelocity);
+            if (newVelocity.x <= 0)
+            {
+                sprRend.flipX = false;
+            }
+            else
+            {
+                sprRend.flipX = true;
+            }
+            animator.SetBool(IsMoving, newVelocity.magnitude > 0);
+            animator.SetBool(IsRunning, _multRun > 1);
+
+            body.velocity = newVelocity;
         }
         else
         {
-            sprRend.flipX = true;
+            body.velocity = new Vector2(0, 0);
         }
-        animator.SetBool(IsMoving, newVelocity.magnitude > 0);
-        animator.SetBool(IsRunning, _multRun > 1);
 
-        body.velocity = newVelocity;
         
     }
     private void questInteraction()

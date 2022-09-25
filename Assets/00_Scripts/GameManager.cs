@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     private static GameManager cela;
     public List<GameObject> listSpawn = new List<GameObject>();
     [SerializeField] Canvas pauseMenuUI;
+    public bool canMove = true;
     public static GameManager instance
     {
         get

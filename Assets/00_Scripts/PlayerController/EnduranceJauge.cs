@@ -43,6 +43,7 @@ public class EnduranceJauge : MonoBehaviour
                 StopCoroutine(CoEndurance);
                 CoEndurance = StartCoroutine(enduranceTimer());
                 gManager.triggerFakePause(false);
+                gManager.canMove = true;
             }
             yield return new WaitForSeconds(decreaseSpeed);
         }
@@ -56,6 +57,7 @@ public class EnduranceJauge : MonoBehaviour
             //Debug.Log("fjdioqjidoshello");
             StopCoroutine(CoEndurance);
             gManager.triggerFakePause(true);
+            gManager.canMove = false;
             CoEndurance = StartCoroutine(enduranceUp());
 
         }
