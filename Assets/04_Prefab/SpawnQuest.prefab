@@ -43,4 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0b2e6a759316e64c9c309221413ae04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questToSpawn: {fileID: 2674989128702371419, guid: ed6f6fdc1dc0fd546965cda2c1a5e7f5, type: 3}
+  questToSpawn:
+  - {fileID: 0}
+  - {fileID: 8040167129098857749, guid: c1e71416c2707854aa29295f57b821a5, type: 3}
+  - {fileID: 2674989128702371419, guid: ed6f6fdc1dc0fd546965cda2c1a5e7f5, type: 3}
