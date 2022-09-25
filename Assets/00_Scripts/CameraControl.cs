@@ -9,6 +9,8 @@ public class CameraControl : MonoBehaviour
     public CinemachineVirtualCamera GameCamera;
     public GameManager gManager;
     public float fov;
+    public Transform mapCenter;
+    public float dezoomDistance = 7;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,17 +21,31 @@ public class CameraControl : MonoBehaviour
     {
         if (!state)
         {
-            DOTween.To(() => fov, x => fov = x, 105, 0.5f)
+            DOTween.To(() => fov, x => fov = x, dezoomDistance, 0.5f)
             .OnUpdate(() => {
-                GameCamera.m_Lens.FieldOfView = fov;
+                GameCamera.m_Lens.OrthographicSize = fov;
+                GameObject[] arrayCafe = GameObject.FindGameObjectsWithTag("cafe");
+                foreach (GameObject item in arrayCafe)
+                {
+                    item.GetComponentInChildren<Transform>().localScale = new Vector3(5, 5, 5);
+                }
+                GameCamera.LookAt = mapCenter;
+                GameCamera.Follow = mapCenter;
             });
 
         }
         else
         {
-            DOTween.To(() => fov, x => fov = x, 23, 0.5f)
+            DOTween.To(() => fov, x => fov = x, 2, 0.5f)
             .OnUpdate(() => {
-                GameCamera.m_Lens.FieldOfView = fov;
+                GameCamera.m_Lens.OrthographicSize = fov;
+                GameObject[] arrayCafe = GameObject.FindGameObjectsWithTag("cafe");
+                foreach (GameObject item in arrayCafe)
+                {
+                    item.GetComponentInChildren<Transform>().localScale = new Vector3(1, 1, 1);
+                }
+                GameCamera.LookAt = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+                GameCamera.Follow = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
             });
             //GameCamera.m_Lens.FieldOfView = 23;
         }
