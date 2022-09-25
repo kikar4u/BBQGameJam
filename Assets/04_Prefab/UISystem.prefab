@@ -686,7 +686,7 @@ GameObject:
   - component: {fileID: 1708280536971715257}
   m_Layer: 5
   m_Name: UISystem
-  m_TagString: Untagged
+  m_TagString: UIScore
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
