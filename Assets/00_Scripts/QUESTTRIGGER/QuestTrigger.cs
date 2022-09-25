@@ -8,6 +8,7 @@ public class QuestTrigger : MonoBehaviour
     public bool isOnQuest = false;
     [SerializeField] GameManager gManager;
     public GameObject questCanvas;
+    public bool spawn = true;
     void Awake()
     {
         gManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
@@ -42,7 +43,11 @@ public class QuestTrigger : MonoBehaviour
     public void questDone()
     {
         //Debug.Log("APPUYER POUR QUEST quest trigger");
-        gManager.randomSpawn(gManager.listSpawn);
+        if (!spawn)
+        {
+            gManager.randomSpawn(gManager.listSpawn);
+        }
+
         questCanvas.SetActive(false);
         Destroy(gameObject);
         gManager.canMove = true;

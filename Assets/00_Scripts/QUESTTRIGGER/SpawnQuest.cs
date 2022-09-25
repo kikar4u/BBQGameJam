@@ -8,10 +8,12 @@ public class SpawnQuest : MonoBehaviour
     // Start is called before the first frame update
     public void spawnObject()
     {
+            int a = Random.Range(0, questToSpawn.Length);
+            GameObject quest = Instantiate(questToSpawn[a]);
+            quest.transform.position = gameObject.transform.position;
+
         //Debug.Log("ça pop");
-        int a = Random.Range(0, questToSpawn.Length);
-        GameObject quest = Instantiate(questToSpawn[a]);
-        quest.transform.position = gameObject.transform.position;
+
 
     }
 }
