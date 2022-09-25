@@ -13,7 +13,7 @@ public class FootSteps : MonoBehaviour
     }
     public void Footsteps()
     {
-        Debug.Log("footsteps");
+       // Debug.Log("footsteps");
         int a = Random.Range(0, footSteps.Length);
         //gameObject.GetComponent<AudioSource>().clip = footSteps[a];
         audioSource.PlayOneShot(footSteps[a]);

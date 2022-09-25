@@ -9,9 +9,11 @@ public class EnduranceJauge : MonoBehaviour
     [SerializeField] float decreaseRatio = 1.0f;
     [SerializeField] float decreaseSpeed = 0.1f;
     [SerializeField] public Slider endurance;
-    Coroutine CoEndurance;
+    public Coroutine CoEndurance;
     [SerializeField] GameManager gManager;
     public CameraControl cameraControl;
+    public Canvas pauseUI;
+    public bool etatPauseUI = true;
 
     // Start is called before the first frame update
     void Start()
@@ -36,18 +38,42 @@ public class EnduranceJauge : MonoBehaviour
     {
         for (float i = jaugeCafe; i <= endurance.maxValue; i += decreaseRatio)
         {
+
             //Debug.Log("fjqsoidfjioqsdfjioqs");
             jaugeCafe = i;
             endurance.value = jaugeCafe;
             if(endurance.value == endurance.maxValue)
             {
-                StopCoroutine(CoEndurance);
-                CoEndurance = StartCoroutine(enduranceTimer());
-                gManager.triggerFakePause(false);
-                gManager.canMove = true;
-                cameraControl.lerping(true);
+                Debug.Log(pauseUI.GetComponent<GetOutPause>().etat);
+                if (!etatPauseUI)
+                {
+                    Debug.Log("POPIPOP");
+
+                    pauseUI.GetComponent<GetOutPause>().etat = false;
+                    StopCoroutine(CoEndurance);
+                    etatPauseUI = true;
+                    //CoEndurance = StartCoroutine(enduranceTimer());
+                    //gManager.triggerFakePause(false);
+                    
+
+
+                }
+/*                else
+                {
+                    StopCoroutine(CoEndurance);
+                    CoEndurance = StartCoroutine(enduranceTimer());
+                }*/
+
+                
+
+                
+
             }
-            yield return new WaitForSeconds(decreaseSpeed);
+            if (i > endurance.maxValue)
+            {
+                i = endurance.maxValue;
+            }
+            yield return new WaitForSeconds(0.090f);
         }
     }
     public void switchRoutine(bool etat = false)
@@ -67,7 +93,9 @@ public class EnduranceJauge : MonoBehaviour
         else
         {
             Debug.Log("boup");
-            
+            StopCoroutine(enduranceUp());
+            CoEndurance = StartCoroutine(enduranceTimer());
+
         }
 
     }
@@ -78,5 +106,6 @@ public class EnduranceJauge : MonoBehaviour
         {
             gManager.GameOver(true);
         }
+        
     }
 }

@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 {
     private static GameManager cela;
     public List<GameObject> listSpawn = new List<GameObject>();
+    public List<GameObject> listSpawnCafe = new List<GameObject>();
     [SerializeField] Canvas pauseMenuUI;
     public bool canMove = true;
 
@@ -38,7 +39,12 @@ public class GameManager : MonoBehaviour
             Debug.Log("fhqudsfhqusid");
             listSpawn.Add(item);
         }
-        
+        GameObject[] b = GameObject.FindGameObjectsWithTag("cafeSpawn");
+        foreach (GameObject item in b)
+        {
+            listSpawnCafe.Add(item);
+        }
+
     }
     void Start()
     {
@@ -56,21 +62,21 @@ public class GameManager : MonoBehaviour
     public void addCafe()
     {
         cafeAtm += 1;
-        Debug.Log("addcafe" + cafeAtm);
+        //Debug.Log("addcafe" + cafeAtm);
         if(cafeAtm == cafeToHave)
         {
-            Debug.Log("on est dans le if de addcafe");
+            //Debug.Log("on est dans le if de addcafe");
             cafeAtm = 0;
             
             GetComponent<EnduranceJauge>().switchRoutine(true);
         }
     }
-    public void randomSpawn()
+    public void randomSpawn(List<GameObject> tab)
     {
-        Debug.Log("list count " + listSpawn.Count);
-        int randomNumber = Random.Range(0, listSpawn.Count);
-        Debug.Log("list random " + randomNumber);
-        listSpawn[randomNumber].GetComponent<SpawnQuest>().spawnObject();
+        //Debug.Log("list count " + tab.Count);
+        int randomNumber = Random.Range(0, tab.Count);
+        //Debug.Log("list random " + randomNumber);
+        tab[randomNumber].GetComponent<SpawnQuest>().spawnObject();
     }
     public void Win()
     {

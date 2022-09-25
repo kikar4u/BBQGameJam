@@ -24,7 +24,7 @@ public class QuestTrigger : MonoBehaviour
         //Debug.Log("ddddddddD");
         if (other.gameObject.tag == "Player")
         {
-            Debug.Log("ddddddddD");
+            //Debug.Log("ddddddddD");
             isOnQuest = true;
             other.gameObject.GetComponent<PlayerController>().isOnQuest = isOnQuest;
         }
@@ -41,8 +41,8 @@ public class QuestTrigger : MonoBehaviour
     }
     public void questDone()
     {
-        Debug.Log("APPUYER POUR QUEST quest trigger");
-        gManager.randomSpawn();
+        //Debug.Log("APPUYER POUR QUEST quest trigger");
+        gManager.randomSpawn(gManager.listSpawn);
         questCanvas.SetActive(false);
         Destroy(gameObject);
         gManager.canMove = true;
@@ -52,7 +52,7 @@ public class QuestTrigger : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1") && isOnQuest)
         {
-            Debug.Log("APPUYER POUR QUEST quest trigger");
+            //Debug.Log("APPUYER POUR QUEST quest trigger");
             //gManager.randomSpawn();
             questCanvas.SetActive(true);
             //Destroy(gameObject);

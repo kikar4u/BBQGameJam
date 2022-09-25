@@ -14,8 +14,9 @@ public class Cafe : MonoBehaviour
     {
         if(other.gameObject.tag == "Player")
         {
-            Debug.Log("Collider");
+            //Debug.Log("Collider");
             gManager.addCafe();
+            gManager.randomSpawn(gManager.listSpawnCafe);
             Destroy(gameObject);
         }
     }
