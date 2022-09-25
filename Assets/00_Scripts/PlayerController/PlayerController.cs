@@ -23,11 +23,11 @@ public class PlayerController : MonoBehaviour
     private static readonly int IsRunning = Animator.StringToHash("isRunning");
 
     [SerializeField] public bool isOnQuest = false;
-
-    // Start is called before the first frame update
-    private void Start()
+    [SerializeField] GameManager gManager;
+    // Start is called before the first frame update    
+    void Awake()
     {
-
+        gManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
     }
     private void Update()
     {
@@ -69,11 +69,13 @@ public class PlayerController : MonoBehaviour
     {
         if (isOnQuest)
         {
-            if (Input.GetButtonDown("Fire1"))
+/*            if (Input.GetButtonDown("Fire1"))
             {
                 Debug.Log("APPUYER POUR QUEST");
 
-            }
+                //gManager.randomSpawn();
+
+            }*/
 
         }
 

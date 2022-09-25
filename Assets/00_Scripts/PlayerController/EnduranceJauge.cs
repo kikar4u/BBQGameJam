@@ -10,12 +10,15 @@ public class EnduranceJauge : MonoBehaviour
     [SerializeField] float decreaseSpeed = 0.1f;
     [SerializeField] public Slider endurance;
     Coroutine CoEndurance;
+    [SerializeField] GameManager gManager;
+
     // Start is called before the first frame update
     void Start()
     {
         endurance = GameObject.FindGameObjectWithTag("enduranceSlider").GetComponent<Slider>();
         endurance.value = jaugeCafe;
         CoEndurance = StartCoroutine(enduranceTimer());
+        gManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
     }
     IEnumerator enduranceTimer()
     {
@@ -24,6 +27,7 @@ public class EnduranceJauge : MonoBehaviour
         {
             jaugeCafe = i;
             endurance.value = jaugeCafe;
+            
             yield return new WaitForSeconds(decreaseSpeed);
         }
     }
@@ -31,12 +35,14 @@ public class EnduranceJauge : MonoBehaviour
     {
         for (float i = jaugeCafe; i <= endurance.maxValue; i += decreaseRatio)
         {
-            Debug.Log("fjqsoidfjioqsdfjioqs");
+            //Debug.Log("fjqsoidfjioqsdfjioqs");
             jaugeCafe = i;
             endurance.value = jaugeCafe;
             if(endurance.value == endurance.maxValue)
             {
                 StopCoroutine(CoEndurance);
+                CoEndurance = StartCoroutine(enduranceTimer());
+                gManager.triggerFakePause(false);
             }
             yield return new WaitForSeconds(decreaseSpeed);
         }
@@ -46,16 +52,17 @@ public class EnduranceJauge : MonoBehaviour
         Debug.Log("prout");
         if (etat)
         {
-            Debug.Log("fjdioqjidoshello");
+            // remise endurance
+            //Debug.Log("fjdioqjidoshello");
             StopCoroutine(CoEndurance);
+            gManager.triggerFakePause(true);
             CoEndurance = StartCoroutine(enduranceUp());
+
         }
         else
         {
-            StopCoroutine(CoEndurance);
-            //CoEndurance = StartCoroutine(enduranceTimer());
-
-
+            Debug.Log("boup");
+            
         }
 
     }

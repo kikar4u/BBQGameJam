@@ -7,7 +7,8 @@ using TMPro;
 public class GameManager : MonoBehaviour
 {
     private static GameManager cela;
-
+    public List<GameObject> listSpawn = new List<GameObject>();
+    [SerializeField] Canvas pauseMenuUI;
     public static GameManager instance
     {
         get
@@ -27,6 +28,16 @@ public class GameManager : MonoBehaviour
     [SerializeField] int cafeToHave = 1;
     public int cafeAtm = 0;
 
+    void Awake()
+    {
+        GameObject[] a = GameObject.FindGameObjectsWithTag("SpawnQuest");
+        foreach (GameObject item in a)
+        {
+            Debug.Log("fhqudsfhqusid");
+            listSpawn.Add(item);
+        }
+        
+    }
     void Start()
     {
         if(gameOverUI) gameOverUI.SetActive(false);
@@ -51,7 +62,13 @@ public class GameManager : MonoBehaviour
             GetComponent<EnduranceJauge>().switchRoutine(true);
         }
     }
-
+    public void randomSpawn()
+    {
+        Debug.Log("list count " + listSpawn.Count);
+        int randomNumber = Random.Range(0, listSpawn.Count);
+        Debug.Log("list random " + randomNumber);
+        listSpawn[randomNumber].GetComponent<SpawnQuest>().spawnObject();
+    }
     public void Win()
     {
         isWin = true;
@@ -62,6 +79,10 @@ public class GameManager : MonoBehaviour
     private void DoPause(bool pause)
     {
         Time.timeScale = pause ? 0 : 1;
+    }
+    public void triggerFakePause(bool a)
+    {
+        pauseMenuUI.gameObject.SetActive(a);
     }
     public void pauseMenu()
     {
