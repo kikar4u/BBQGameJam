@@ -46,8 +46,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jaugeCafe: 100
   decreaseRatio: 1
-  decreaseSpeed: 0.1
+  decreaseSpeed: 1
   endurance: {fileID: 0}
+  gManager: {fileID: 0}
+  cameraControl: {fileID: 0}
+  pauseUI: {fileID: 0}
+  etatPauseUI: 0
 --- !u!114 &6516818656694388191
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60,6 +64,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fb3ce5897f27f84dba7980941ea237e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  listSpawn: []
+  listSpawnCafe: []
+  pauseMenuUI: {fileID: 0}
+  canMove: 1
   gameOverUI: {fileID: 0}
   pauseUI: {fileID: 0}
   winUI: {fileID: 0}
