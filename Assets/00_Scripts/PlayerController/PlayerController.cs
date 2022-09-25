@@ -58,7 +58,15 @@ public class PlayerController : MonoBehaviour
         float _multRun = Input.GetButton("Fire2") ? multRun : 1;
         
         Vector2 newVelocity = new Vector2(horizontal * speed * _multRun, vertical * speed * _multRun);
-
+        //Debug.Log(newVelocity);
+        if(newVelocity.x <= 0)
+        {
+            sprRend.flipX = false;
+        }
+        else
+        {
+            sprRend.flipX = true;
+        }
         animator.SetBool(IsMoving, newVelocity.magnitude > 0);
         animator.SetBool(IsRunning, _multRun > 1);
 

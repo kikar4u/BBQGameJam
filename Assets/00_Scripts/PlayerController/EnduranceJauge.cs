@@ -69,6 +69,9 @@ public class EnduranceJauge : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(endurance.value == 0)
+        {
+            gManager.GameOver(true);
+        }
     }
 }
