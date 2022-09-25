@@ -10,6 +10,7 @@ public class addScore : MonoBehaviour
     void Start()
     {
         gManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+        scoreGame = GameObject.FindGameObjectWithTag("score").GetComponent<TMP_Text>();
     }
 
     public void updateScore()

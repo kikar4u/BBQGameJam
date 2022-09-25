@@ -184,7 +184,7 @@ GameObject:
   - component: {fileID: 1708280535368845880}
   m_Layer: 5
   m_Name: Score
-  m_TagString: Untagged
+  m_TagString: score
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -319,7 +319,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 547cf6f09e8ce3e4294d888083c43758, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Score: {fileID: 0}
+  scoreGame: {fileID: 1708280535368845887}
 --- !u!1 &1708280535736725801
 GameObject:
   m_ObjectHideFlags: 0
@@ -786,4 +786,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 547cf6f09e8ce3e4294d888083c43758, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Score: {fileID: 1708280535368845881}
+  scoreGame: {fileID: 1708280535368845887}
