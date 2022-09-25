@@ -11,6 +11,7 @@ public class EnduranceJauge : MonoBehaviour
     [SerializeField] public Slider endurance;
     Coroutine CoEndurance;
     [SerializeField] GameManager gManager;
+    public CameraControl cameraControl;
 
     // Start is called before the first frame update
     void Start()
@@ -44,6 +45,7 @@ public class EnduranceJauge : MonoBehaviour
                 CoEndurance = StartCoroutine(enduranceTimer());
                 gManager.triggerFakePause(false);
                 gManager.canMove = true;
+                cameraControl.lerping(true);
             }
             yield return new WaitForSeconds(decreaseSpeed);
         }
@@ -58,6 +60,7 @@ public class EnduranceJauge : MonoBehaviour
             StopCoroutine(CoEndurance);
             gManager.triggerFakePause(true);
             gManager.canMove = false;
+            cameraControl.lerping(false);
             CoEndurance = StartCoroutine(enduranceUp());
 
         }

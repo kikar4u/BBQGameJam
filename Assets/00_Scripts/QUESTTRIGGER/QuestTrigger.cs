@@ -7,6 +7,7 @@ public class QuestTrigger : MonoBehaviour
     private GameObject player;
     public bool isOnQuest = false;
     [SerializeField] GameManager gManager;
+    public GameObject questCanvas;
     void Awake()
     {
         gManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
@@ -38,15 +39,28 @@ public class QuestTrigger : MonoBehaviour
         }
 
     }
+    public void questDone()
+    {
+        Debug.Log("APPUYER POUR QUEST quest trigger");
+        gManager.randomSpawn();
+        questCanvas.SetActive(false);
+        Destroy(gameObject);
+        gManager.canMove = true;
+    }
     // Update is called once per frame
     void Update()
     {
         if (Input.GetButtonDown("Fire1") && isOnQuest)
         {
             Debug.Log("APPUYER POUR QUEST quest trigger");
-            gManager.randomSpawn();
-            Destroy(gameObject);
+            //gManager.randomSpawn();
+            questCanvas.SetActive(true);
+            //Destroy(gameObject);
 
+        }
+        if(questCanvas.activeSelf == true)
+        {
+            gManager.canMove = false;
         }
     }
 }

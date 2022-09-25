@@ -8,6 +8,7 @@ TagManager:
   - cafe
   - GameManager
   - SpawnQuest
+  - VirtualC
   layers:
   - Default
   - TransparentFX

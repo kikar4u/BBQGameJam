@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public List<GameObject> listSpawn = new List<GameObject>();
     [SerializeField] Canvas pauseMenuUI;
     public bool canMove = true;
+
     public static GameManager instance
     {
         get
@@ -60,6 +61,7 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("on est dans le if de addcafe");
             cafeAtm = 0;
+            
             GetComponent<EnduranceJauge>().switchRoutine(true);
         }
     }
