@@ -7,6 +7,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1207109886, guid: ed6f6fdc1dc0fd546965cda2c1a5e7f5, type: 3}
+      propertyPath: m_Size.y
+      value: 0.8221426
+      objectReference: {fileID: 0}
+    - target: {fileID: 1207109886, guid: ed6f6fdc1dc0fd546965cda2c1a5e7f5, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.029033378
+      objectReference: {fileID: 0}
+    - target: {fileID: 1207109887, guid: ed6f6fdc1dc0fd546965cda2c1a5e7f5, type: 3}
+      propertyPath: spawn
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2674989128702371419, guid: ed6f6fdc1dc0fd546965cda2c1a5e7f5, type: 3}
       propertyPath: m_Name
       value: QuestTrigger Variant2

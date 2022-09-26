@@ -11,6 +11,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: e2299c098292f714da4fb9b595255ae9, type: 3}
+    - target: {fileID: 5202092544245671271, guid: 25ed01a25cfbe7746b4cc7d51a2a1956, type: 3}
+      propertyPath: m_Size.y
+      value: 0.5780282
+      objectReference: {fileID: 0}
+    - target: {fileID: 5202092544245671271, guid: 25ed01a25cfbe7746b4cc7d51a2a1956, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.093023844
+      objectReference: {fileID: 0}
     - target: {fileID: 7867493792689785794, guid: 25ed01a25cfbe7746b4cc7d51a2a1956, type: 3}
       propertyPath: m_Name
       value: QuestTrigger Variant3

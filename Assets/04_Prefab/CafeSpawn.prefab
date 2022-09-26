@@ -20,9 +20,13 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6966713018167195535, guid: 99e20da8426209b4486abc38c79d1864, type: 3}
     - target: {fileID: 8503800786190199662, guid: 8675dceb778a66646ba7e1f27ac87ea4, type: 3}
+      propertyPath: questToSpawn.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8503800786190199662, guid: 8675dceb778a66646ba7e1f27ac87ea4, type: 3}
       propertyPath: questToSpawn.Array.data[0]
       value: 
-      objectReference: {fileID: 7867493792689785794, guid: 25ed01a25cfbe7746b4cc7d51a2a1956, type: 3}
+      objectReference: {fileID: 6966713018167195535, guid: 99e20da8426209b4486abc38c79d1864, type: 3}
     - target: {fileID: 8503800786190199663, guid: 8675dceb778a66646ba7e1f27ac87ea4, type: 3}
       propertyPath: m_RootOrder
       value: 0

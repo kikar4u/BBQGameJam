@@ -845,7 +845,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: NOM DU JEU
+  m_text: Coffee Clickr
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a9bb4481340711d49beacb6291d00a67, type: 2}
   m_sharedMaterial: {fileID: 6822277629042113902, guid: a9bb4481340711d49beacb6291d00a67, type: 2}

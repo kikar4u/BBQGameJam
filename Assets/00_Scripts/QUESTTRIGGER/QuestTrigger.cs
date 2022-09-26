@@ -45,10 +45,9 @@ public class QuestTrigger : MonoBehaviour
     public void questDone()
     {
         //Debug.Log("APPUYER POUR QUEST quest trigger");
-        if (!spawn)
-        {
+
             gManager.randomSpawn(gManager.listSpawn);
-        }
+
         gManager.score++;
         UIScore.GetComponent<addScore>().updateScore();
         questCanvas.SetActive(false);
