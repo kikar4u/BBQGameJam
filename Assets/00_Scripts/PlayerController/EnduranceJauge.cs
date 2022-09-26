@@ -10,8 +10,10 @@ public class EnduranceJauge : MonoBehaviour
     [SerializeField] float decreaseSpeed = 0.1f;
     [SerializeField] public Slider endurance;
     public Coroutine CoEndurance;
+    [HideInInspector]
     [SerializeField] GameManager gManager;
-    public CameraControl cameraControl;
+    [HideInInspector]
+    [SerializeField] CameraControl cameraControl;
     public Canvas pauseUI;
     public bool etatPauseUI = true;
 
@@ -21,6 +23,7 @@ public class EnduranceJauge : MonoBehaviour
         endurance = GameObject.FindGameObjectWithTag("enduranceSlider").GetComponent<Slider>();
         endurance.value = jaugeCafe;
         CoEndurance = StartCoroutine(enduranceTimer());
+        cameraControl = GameObject.FindGameObjectWithTag("VirtualC").GetComponent<CameraControl>();
         gManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
     }
     IEnumerator enduranceTimer()
