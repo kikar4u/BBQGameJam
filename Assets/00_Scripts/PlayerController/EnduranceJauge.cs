@@ -50,7 +50,7 @@ public class EnduranceJauge : MonoBehaviour
                 Debug.Log(pauseUI.GetComponent<GetOutPause>().etat);
                 if (!etatPauseUI)
                 {
-                    Debug.Log("POPIPOP");
+                    //Debug.Log("POPIPOP");
 
                     pauseUI.GetComponent<GetOutPause>().etat = false;
                     StopCoroutine(CoEndurance);
@@ -81,7 +81,7 @@ public class EnduranceJauge : MonoBehaviour
     }
     public void switchRoutine(bool etat = false)
     {
-        Debug.Log("prout");
+        //Debug.Log("prout");
         if (etat)
         {
             // remise endurance
@@ -95,7 +95,7 @@ public class EnduranceJauge : MonoBehaviour
         }
         else
         {
-            Debug.Log("boup");
+            //Debug.Log("boup");
             StopCoroutine(enduranceUp());
             CoEndurance = StartCoroutine(enduranceTimer());
 
@@ -109,6 +109,7 @@ public class EnduranceJauge : MonoBehaviour
         {
             gManager.GameOver(true);
         }
+
         
     }
 }

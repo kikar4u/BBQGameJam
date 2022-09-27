@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
         GameObject[] a = GameObject.FindGameObjectsWithTag("SpawnQuest");
         foreach (GameObject item in a)
         {
-            Debug.Log("fhqudsfhqusid");
+            //Debug.Log("fhqudsfhqusid");
             listSpawn.Add(item);
         }
         GameObject[] b = GameObject.FindGameObjectsWithTag("cafeSpawn");
@@ -63,14 +63,19 @@ public class GameManager : MonoBehaviour
     }
     public void addCafe()
     {
-        cafeAtm += 1;
+        cafeAtm++;
         //Debug.Log("addcafe" + cafeAtm);
         if(cafeAtm == cafeToHave)
         {
             //Debug.Log("on est dans le if de addcafe");
             cafeAtm = 0;
-            
-            GetComponent<EnduranceJauge>().switchRoutine(true);
+            if(cafeToHave == 1){
+                cafeToHave = 0;
+            }
+
+            cafeToHave= cafeToHave+2;
+            EnduranceJauge jauge = GetComponent<EnduranceJauge>();
+            jauge.switchRoutine(true);
         }
     }
     public void randomSpawn(List<GameObject> tab)

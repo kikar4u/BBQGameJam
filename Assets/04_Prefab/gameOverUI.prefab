@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7200066253352297483}
   - component: {fileID: 7200066253352297480}
   - component: {fileID: 7200066253352297481}
+  - component: {fileID: 1752602364343710368}
   m_Layer: 5
   m_Name: gameOverUI
   m_TagString: Untagged
@@ -213,6 +214,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   img: {fileID: 7200066254979718277}
+--- !u!114 &1752602364343710368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7200066253352297486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a69d91ce47a7d24e92a7ae2b9090b81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7200066253917261901
 GameObject:
   m_ObjectHideFlags: 0
@@ -334,9 +347,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: LoadLevel
+      - m_Target: {fileID: 1752602364343710368}
+        m_TargetAssemblyTypeName: MenuScript, Assembly-CSharp
+        m_MethodName: gotoLvl
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
