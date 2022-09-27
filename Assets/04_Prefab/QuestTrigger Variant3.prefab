@@ -11,6 +11,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: e2299c098292f714da4fb9b595255ae9, type: 3}
+    - target: {fileID: 4993805056200259989, guid: 25ed01a25cfbe7746b4cc7d51a2a1956, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 5371405771538990001}
+    - target: {fileID: 4993805056200259989, guid: 25ed01a25cfbe7746b4cc7d51a2a1956, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: questDone
+      objectReference: {fileID: 0}
     - target: {fileID: 5202092544245671271, guid: 25ed01a25cfbe7746b4cc7d51a2a1956, type: 3}
       propertyPath: m_Size.y
       value: 0.5780282
@@ -69,3 +77,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25ed01a25cfbe7746b4cc7d51a2a1956, type: 3}
+--- !u!114 &5371405771538990001 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5202092544245671270, guid: 25ed01a25cfbe7746b4cc7d51a2a1956, type: 3}
+  m_PrefabInstance: {fileID: 196639461732787927}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ac09e1fa7489bd4badb5b985d512674, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
